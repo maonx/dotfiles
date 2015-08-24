@@ -28,6 +28,7 @@ Plugin 'tomasr/molokai'
 Plugin 'pzich/phtmlSwitch-vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'kien/ctrlp.vim'
+Plugin 'maonx/vimim'
 "Bundle 'scrooloose/nerdtree'
 "Plugin 'captbaritone/better-indent-support-for-php-with-html'
 
@@ -266,6 +267,11 @@ endif
 if !exists('g:neocomplete#force_omni_input_patterns')
     let g:neocomplete#force_omni_input_patterns = {}
 endif
+
+" 自定义函数词典
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'php' : $HOME.'/.common.php'
+    \ }
 "let g:neocomplete#sources#omni#input_patterns.php =
 "\ '[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
 "let g:neocomplete#sources#omni#input_patterns.c =
@@ -295,7 +301,8 @@ au BufRead *.py map <buffer> <F5> :w<CR>:!c:\python34\python.exe % <CR>
 
 " 文件类型识别设置
 au BufRead,BufNewFile *.less set ft=css syntax=css
-
+au BufRead,BufNewFile *.scss set ft=css syntax=css
+au BufRead,BufNewFile css.snippets set ft=css syntax=css
 
 
 
