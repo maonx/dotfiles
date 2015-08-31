@@ -85,4 +85,5 @@ alias zshconfig="vi ~/.zshrc"
 alias tbsdk="~/Documents/newSDK/TAE_SDK/htdocs"
 alias startSDK="sh ~/Documents/newSDK/TAE_SDK/bin/startServer.sh"
 alias csswatch="sass --sourcemap=none --watch "
+alias vi="vim"
 plugins=(git colored-man colorize github jira vagrant virtualenv pip python brew sass osx zsh-syntax-highlighting)
