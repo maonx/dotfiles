@@ -1,8 +1,8 @@
-"===========================æˆ‘çš„VimForMacé…ç½®============================"
-" æ’ä»¶ç®¡ç†"{{{
-" å°† pathogen è‡ªèº«ä¹Ÿç½®äºç‹¬ç«‹ç›®å½•ä¸­ï¼Œéœ€æŒ‡å®šå…¶è·¯å¾„ 
+"===========================ÎÒµÄVimForMacÅäÖÃ============================"
+" ²å¼ş¹ÜÀí"{{{
+" ½« pathogen ×ÔÉíÒ²ÖÃÓÚ¶ÀÁ¢Ä¿Â¼ÖĞ£¬ĞèÖ¸¶¨ÆäÂ·¾¶ 
 " runtime bundle/pathogen/autoload/pathogen.vim
-" è¿è¡Œ pathogen
+" ÔËĞĞ pathogen
 " execute pathogen#infect()
 filetype off                  " required
 
@@ -18,9 +18,7 @@ call vundle#rc('~/.vim/bundle/')
 Plugin 'gmarik/Vundle.vim'
 "" Buffer explorer
 Plugin 'fholgado/minibufexpl.vim'
-" css color display
 Plugin 'https://github.com/gorodinskiy/vim-coloresque.git'
-" file search 
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'https://github.com/Shougo/neocomplete.vim'
@@ -28,13 +26,13 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'Valloric/MatchTagAlways'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'edsono/vim-matchit'
-" vim theme color
 Plugin 'tomasr/molokai'
-" vim snippets 
 Plugin 'SirVer/ultisnips'
 Plugin 'pzich/phtmlSwitch-vim'
-" vim å†…ç½®ä¸­æ–‡è¾“å…¥æ³•æ’ä»¶
 Plugin 'maonx/vimim'
+"Plugin 'ybian/smartim'
+"Bundle 'scrooloose/nerdtree'
+"Plugin 'captbaritone/better-indent-support-for-php-with-html'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -52,80 +50,94 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 "
 ""}}}
-" åŸºæœ¬é…ç½®"{{{
+" »ù±¾ÅäÖÃ"{{{
 
 
 set nocompatible
+"behave mswin
+source $VIMRUNTIME/vimrc_example.vim
 
-" å¼€å¯æ–‡ä»¶ç±»å‹ä¾¦æµ‹
+" ¿ªÆôÎÄ¼şÀàĞÍÕì²â
 filetype on
-" æ ¹æ®ä¾¦æµ‹åˆ°çš„ä¸åŒç±»å‹åŠ è½½å¯¹åº”çš„æ’ä»¶
+" ¸ù¾İÕì²âµ½µÄ²»Í¬ÀàĞÍ¼ÓÔØ¶ÔÓ¦µÄ²å¼ş
 filetype plugin on
 
-" è‡ªåŠ¨è¯†åˆ«ç¼–ç 
+" ×Ô¶¯Ê¶±ğ±àÂë
 set fileencodings=utf-8,cp936
 
-" ä¸å¤‡ä»½æ–‡ä»¶
+" ²»±¸·İÎÄ¼ş
 set nobackup
 
-"è®¾ç½®æŒä¹…æ’¤é”€æ–‡ä»¶å­˜æ”¾ç›®å½•
+"ÉèÖÃ³Ö¾Ã³·ÏúÎÄ¼ş´æ·ÅÄ¿Â¼
 set undodir=~/.vim/.undodir
 set undofile
 set history=1000
 
-" é…ç½®ä¸»é¢˜è‰²
+" ÅäÖÃÖ÷ÌâÉ«
 colorscheme molokai
 
-" æ€»æ˜¯æ˜¾ç¤ºçŠ¶æ€æ 
+" ½ûÖ¹¹â±êÉÁË¸
+" set gcr=a:block-blinkon0
+" ½ûÖ¹ÏÔÊ¾¹ö¶¯Ìõ
+"set guioptions-=l
+"set guioptions-=L
+"set guioptions-=r
+"set guioptions-=R
+"" ½ûÖ¹ÏÔÊ¾²Ëµ¥ºÍ¹¤¾ßÌõ
+"set guioptions-=m
+"set guioptions-=T
+
+
+" ×ÜÊÇÏÔÊ¾×´Ì¬À¸
 set laststatus=2
-" æ˜¾ç¤ºå…‰æ ‡å½“å‰ä½ç½®
+" ÏÔÊ¾¹â±êµ±Ç°Î»ÖÃ
 set ruler
-" å¼€å¯è¡Œå·æ˜¾ç¤º
+" ¿ªÆôĞĞºÅÏÔÊ¾
 set number
-" é«˜äº®æ˜¾ç¤ºå½“å‰è¡Œ/åˆ—
+" ¸ßÁÁÏÔÊ¾µ±Ç°ĞĞ/ÁĞ
 set cursorline
 set cursorcolumn
-" é«˜äº®æ˜¾ç¤ºæœç´¢ç»“æœ
+" ¸ßÁÁÏÔÊ¾ËÑË÷½á¹û
 set hlsearch
 
-" å¼€å¯è¯­æ³•é«˜äº®åŠŸèƒ½
+" ¿ªÆôÓï·¨¸ßÁÁ¹¦ÄÜ
 syntax enable
-" å…è®¸ç”¨æŒ‡å®šè¯­æ³•é«˜äº®é…è‰²æ–¹æ¡ˆæ›¿æ¢é»˜è®¤æ–¹æ¡ˆ
+" ÔÊĞíÓÃÖ¸¶¨Óï·¨¸ßÁÁÅäÉ«·½°¸Ìæ»»Ä¬ÈÏ·½°¸
 syntax on
 
-" è‡ªé€‚åº”ä¸åŒè¯­è¨€çš„æ™ºèƒ½ç¼©è¿›
+" ×ÔÊÊÓ¦²»Í¬ÓïÑÔµÄÖÇÄÜËõ½ø
 filetype indent on
-" å°†åˆ¶è¡¨ç¬¦æ‰©å±•ä¸ºç©ºæ ¼
+" ½«ÖÆ±í·ûÀ©Õ¹Îª¿Õ¸ñ
 set expandtab
-" è®¾ç½®ç¼–è¾‘æ—¶åˆ¶è¡¨ç¬¦å ç”¨ç©ºæ ¼æ•°
+" ÉèÖÃ±à¼­Ê±ÖÆ±í·ûÕ¼ÓÃ¿Õ¸ñÊı
 set tabstop=4
-" è®¾ç½®æ ¼å¼åŒ–æ—¶åˆ¶è¡¨ç¬¦å ç”¨ç©ºæ ¼æ•°
+" ÉèÖÃ¸ñÊ½»¯Ê±ÖÆ±í·ûÕ¼ÓÃ¿Õ¸ñÊı
 set shiftwidth=4
-" è®© vim æŠŠè¿ç»­æ•°é‡çš„ç©ºæ ¼è§†ä¸ºä¸€ä¸ªåˆ¶è¡¨ç¬¦
+" ÈÃ vim °ÑÁ¬ĞøÊıÁ¿µÄ¿Õ¸ñÊÓÎªÒ»¸öÖÆ±í·û
 set softtabstop=4
 
-"è®¾ç½®æŠ˜å æ–¹å¼
+"ÉèÖÃÕÛµş·½Ê½
 set foldmethod=marker
 "}}}
-"åŸºæœ¬å¿«æ·é”®è®¾ç½®"{{{
-"å®šä¹‰å¿«æ·é”®çš„å‰ç¼€ï¼Œå³<Leader>
+"»ù±¾¿ì½İ¼üÉèÖÃ"{{{
+"¶¨Òå¿ì½İ¼üµÄÇ°×º£¬¼´<Leader>
 let mapleader=","
 
 noremap \ ,
-" è®¾ç½®å¿«æ·é”®å°†é€‰ä¸­æ–‡æœ¬å—å¤åˆ¶è‡³ç³»ç»Ÿå‰ªè´´æ¿
+" ÉèÖÃ¿ì½İ¼ü½«Ñ¡ÖĞÎÄ±¾¿é¸´ÖÆÖÁÏµÍ³¼ôÌù°å
 vnoremap <Leader>y "+y
-" è®¾ç½®å¿«æ·é”®å°†ç³»ç»Ÿå‰ªè´´æ¿å†…å®¹ç²˜è´´è‡³ vim
+" ÉèÖÃ¿ì½İ¼ü½«ÏµÍ³¼ôÌù°åÄÚÈİÕ³ÌùÖÁ vim
 nmap <Leader>p "+p
 nmap <Leader>P "+P
-" ä¾æ¬¡éå†å­çª—å£
+" ÒÀ´Î±éÀú×Ó´°¿Ú
 nnoremap <Leader>nw <C-W><C-W>
-" è·³è½¬è‡³å³æ–¹çš„çª—å£
+" Ìø×ªÖÁÓÒ·½µÄ´°¿Ú
 nnoremap <Leader>lw <C-W>l
-" è·³è½¬è‡³å·¦æ–¹çš„çª—å£
+" Ìø×ªÖÁ×ó·½µÄ´°¿Ú
 nnoremap <Leader>hw <C-W>h
-" è·³è½¬è‡³ä¸Šæ–¹çš„å­çª—å£
+" Ìø×ªÖÁÉÏ·½µÄ×Ó´°¿Ú
 nnoremap <Leader>kw <C-W>k
-" è·³è½¬è‡³ä¸‹æ–¹çš„å­çª—å£
+" Ìø×ªÖÁÏÂ·½µÄ×Ó´°¿Ú
 nnoremap <Leader>jw <C-W>j
 
 " CTRL-C and CTRL-Insert are Copy
@@ -157,33 +169,39 @@ noremap <C-S>		:update<CR>
 vnoremap <C-S>		<C-C>:update<CR>
 inoremap <C-S>		<C-O>:update<CR>
 "}}}
-" MiniBufExplorer æ’ä»¶é…ç½®"{{{
-" æ˜¾ç¤º/éšè— MiniBufExplorer çª—å£
+" MiniBufExplorer ²å¼şÅäÖÃ"{{{
+" ÏÔÊ¾/Òş²Ø MiniBufExplorer ´°¿Ú
 map <Leader>bl :MBEToggle<cr>
 map <F9> :MBEToggle<cr>
-" buffer åˆ‡æ¢å¿«æ·é”®
+" buffer ÇĞ»»¿ì½İ¼ü
 "map <C-Tab> :MBEbn<cr>
 "map <S-Tab> :MBEbp<cr>
 map <C-n> :MBEbn<cr>
 map <C-m> :MBEbp<cr>
-"è°ƒæ•´åˆ†å‰²çª—å£å¤§å°
+"µ÷Õû·Ö¸î´°¿Ú´óĞ¡
 "nmap <C-j> :resize +3<CR>
 "nmap <C-k> :resize -3<CR>
 "nmap <C-l> :vertical resize -3<CR>
 "nmap <C-h> :vertical resize +3<CR>
-"è®¾ç½®æ˜¾ç¤ºåˆ—è¡¨ä¸ºå·¦ä¾§
+"ÉèÖÃÏÔÊ¾ÁĞ±íÎª×ó²à
 "let g:miniBufExplVSplit = 20   " column width in chars
 let g:miniBufExplUseSingleClick = 1
 left g:did_minibufexplorer_syntax_inits = 1
 " MiniBufExpl Colors
-hi MBENormal               guifg=#808080 
-hi MBEChanged              guifg=#F1266F 
-hi MBEVisibleNormal        guifg=#A6DB29 
-hi MBEVisibleChanged       guifg=#F1266F 
-hi MBEVisibleActiveNormal  guifg=#5DC2D6 
-hi MBEVisibleActiveChanged guifg=#F1266F 
+hi link MBENormal String
+hi link MBEChanged Keyword
+hi link MBEVisibleNormal Define
+hi link MBEVisibleChanged Float
+hi link MBEVisibleActiveNormal Identifier
+hi link MBEVisibleActiveChanged Keyword
+"hi MBENormal               guifg=#FFFFFF 
+"hi MBEChanged              guifg=#F1266F 
+"hi MBEVisibleNormal        guifg=#A6DB29 
+"hi MBEVisibleChanged       guifg=#F1266F 
+"hi MBEVisibleActiveNormal  guifg=#5DC2D6 
+"hi MBEVisibleActiveChanged guifg=#F1266F 
 "}}}
-"UltiSnips è®¾ç½®"{{{
+"UltiSnips ÉèÖÃ"{{{
 let g:UltiSnipsUsePythonVersion = 2
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
@@ -191,17 +209,17 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/Documents/snippets']
 let g:UltiSnipsRemoveSelectModeMappings = 1
 "}}}
-"Neocompleteé…ç½®"{{{
+"NeocompleteÅäÖÃ"{{{
 let g:neocomplete#enable_at_startup = 1
-"å¼¹å‡ºåˆ—è¡¨é•¿åº¦
+"µ¯³öÁĞ±í³¤¶È
 let g:neocomplete#max_list = 15
-"å¼¹å‡ºåˆ—è¡¨ keyword é•¿åº¦
+"µ¯³öÁĞ±í keyword ³¤¶È
 let g:neocomplete#max_keyword_width = 40 
 
-"è‡ªåŠ¨è¡¥å…¨  
+"×Ô¶¯²¹È«  
 inoremap <leader>n <C-x><C-o>
 
-"No scratch  ä¸å¼¹å‡ºscratchçª—å£
+"No scratch  ²»µ¯³öscratch´°¿Ú
 set completeopt-=preview
 
 " Recommended key-mappings.
@@ -272,31 +290,30 @@ let g:neocomplete#sources#omni#input_patterns.perl =
 "  endfunction
 
 "}}}
-"{{{Pythonç›¸å…³é…ç½®
-"<F5>è¿è¡ŒPython3
+"{{{PythonÏà¹ØÅäÖÃ
+"<F5>ÔËĞĞPython3
 au BufRead *.py map <buffer> <F5> :w<CR>:!c:\python34\python.exe % <CR>
 ""}}}
 
-" æ–‡ä»¶ç±»å‹è¯†åˆ«è®¾ç½®
+" ÎÄ¼şÀàĞÍÊ¶±ğÉèÖÃ
 au BufRead,BufNewFile *.less set ft=css syntax=css
 au BufRead,BufNewFile *.scss set ft=css syntax=css
 au BufRead,BufNewFile css.snippets set ft=css syntax=css
 
 
 
-"  å¼ƒç”¨æ’ä»¶åˆ—è¡¨ "{{{
-" NERDTree æ’ä»¶é…ç½®  
-" æŸ¥çœ‹å·¥ç¨‹æ–‡ä»¶ã€‚è®¾ç½®å¿«æ·é”®ï¼Œé€Ÿè®°ï¼šfile list
+" NERDTree ²å¼şÅäÖÃ  ÆúÓÃ"{{{
+" ²é¿´¹¤³ÌÎÄ¼ş¡£ÉèÖÃ¿ì½İ¼ü£¬ËÙ¼Ç£ºfile list
 nmap <Leader>fl :NERDTreeToggle<CR>
 nmap <F8> :NERDTreeToggle<CR>
-" è®¾ç½®NERDTreeå­çª—å£å®½åº¦
+" ÉèÖÃNERDTree×Ó´°¿Ú¿í¶È
 let NERDTreeWinSize=32
-" è®¾ç½®NERDTreeå­çª—å£ä½ç½®
+" ÉèÖÃNERDTree×Ó´°¿ÚÎ»ÖÃ
 let NERDTreeWinPos="right"
-" æ˜¾ç¤ºéšè—æ–‡ä»¶
+" ÏÔÊ¾Òş²ØÎÄ¼ş
 "let NERDTreeShowHidden=1
-" NERDTree å­çª—å£ä¸­ä¸æ˜¾ç¤ºå†—ä½™å¸®åŠ©ä¿¡æ¯
+" NERDTree ×Ó´°¿ÚÖĞ²»ÏÔÊ¾ÈßÓà°ïÖúĞÅÏ¢
 let NERDTreeMinimalUI=1
-" åˆ é™¤æ–‡ä»¶æ—¶è‡ªåŠ¨åˆ é™¤æ–‡ä»¶å¯¹åº” buffer
+" É¾³ıÎÄ¼şÊ±×Ô¶¯É¾³ıÎÄ¼ş¶ÔÓ¦ buffer
 let NERDTreeAutoDeleteBuffer=1
 "}}}
