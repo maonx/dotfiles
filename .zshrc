@@ -84,6 +84,7 @@ ZSH_THEME=pygmalion
 alias zshconfig="vi ~/.zshrc"
 alias tbsdk="~/Documents/newSDK/TAE_SDK/htdocs"
 alias startSDK="sh ~/Documents/newSDK/TAE_SDK/bin/startServer.sh"
-alias csswatch="sass --sourcemap=none --watch "
+alias csswatch="sass --sourcemap=none --watch --no-cache "
 alias vi="vim"
+alias cleanZip="zip -r --exclude='*_MACOSX*' --exclude='*.sass-cache*' --exclude='*.DS_Store*' "
 plugins=(git colored-man colorize github jira vagrant virtualenv pip python brew sass osx zsh-syntax-highlighting)
