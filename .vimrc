@@ -295,6 +295,9 @@ let g:neocomplete#sources#omni#input_patterns.perl =
 au BufRead *.py map <buffer> <F5> :w<CR>:!c:\python34\python.exe % <CR>
 ""}}}
 
+" CtrlP 相关配置
+let g:ctrlp_open_new_file = 'r'
+
 " 文件类型识别设置
 au BufRead,BufNewFile *.less set ft=css syntax=css
 au BufRead,BufNewFile *.scss set ft=css syntax=css
