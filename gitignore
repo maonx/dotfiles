@@ -15,7 +15,6 @@ venv
 node_modules
 .sass-cache
 *.css.map
-.gitignore
 
 # vim swap files
 *.swp
@@ -28,5 +27,3 @@ node_modules
 # Compiled C++ files
 *.out
 
-bundle*
-temp_dirs/undodir*
