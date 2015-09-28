@@ -82,9 +82,14 @@ source $ZSH/oh-my-zsh.sh
 fpath=(/usr/local/share/zsh-completions $fpath)
 ZSH_THEME=pygmalion
 alias zshconfig="vi ~/.zshrc"
-alias tbsdk="~/Documents/newSDK/TAE_SDK/htdocs"
-alias startSDK="sh ~/Documents/newSDK/TAE_SDK/bin/startServer.sh"
+alias zshreload="source ~/.zshrc"
+alias tbsdk="~/Documents/taobaoSDK/TAE_SDK/htdocs"
+alias startSDK="sh ~/Documents/taobaoSDK/TAE_SDK/bin/startServer.sh"
 alias csswatch="sass --sourcemap=none --watch --no-cache "
+alias cssout="sass --sourcemap=none --no-cache "
 alias vi="vim"
+alias addwords="vim ~/.vim/bundle/vimim/plugin/vimim.wubijd.txt"
 alias cleanZip="zip -r --exclude='*_MACOSX*' --exclude='*.sass-cache*' --exclude='*.DS_Store*' "
+alias playOnlineOrigin="you-get -p /opt/homebrew-cask/Caskroom/vlc/2.2.1/VLC.app/Contents/MacOS/VLC "
+alias playOnlineHD2="you-get --format=hd2 -p /opt/homebrew-cask/Caskroom/vlc/2.2.1/VLC.app/Contents/MacOS/VLC "
 plugins=(git colored-man colorize github jira vagrant virtualenv pip python brew sass osx zsh-syntax-highlighting)
