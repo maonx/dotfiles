@@ -94,4 +94,6 @@ alias addwords="vim ~/.vim/bundle/vimim/plugin/vimim.wubijd.txt"
 alias cleanZip="zip -r --exclude='*_MACOSX*' --exclude='*.sass-cache*' --exclude='*.DS_Store*' "
 alias playOnlineOrigin="you-get -p /opt/homebrew-cask/Caskroom/vlc/2.2.1/VLC.app/Contents/MacOS/VLC "
 alias playOnlineHD2="you-get --format=hd2 -p /opt/homebrew-cask/Caskroom/vlc/2.2.1/VLC.app/Contents/MacOS/VLC "
+alias npm="npm --registry=https://registry.npm.taobao.org "
+alias gitci="git add -A && git ci -m "
 plugins=(git colored-man colorize github jira vagrant virtualenv pip python brew sass osx zsh-syntax-highlighting)
