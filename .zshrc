@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/Maonx/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -59,7 +59,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
+export EDITOR='vim'
 # else
 #   export EDITOR='mvim'
 # fi
@@ -78,7 +78,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
 fpath=(/usr/local/share/zsh-completions $fpath)
 ZSH_THEME=pygmalion
 alias zshconfig="vi ~/.zshrc"
@@ -96,4 +95,6 @@ alias playOnlineOrigin="you-get -p /opt/homebrew-cask/Caskroom/vlc/2.2.1/VLC.app
 alias playOnlineHD2="you-get --format=hd2 -p /opt/homebrew-cask/Caskroom/vlc/2.2.1/VLC.app/Contents/MacOS/VLC "
 alias npm="npm --registry=https://registry.npm.taobao.org "
 alias gitci="git add -A && git ci -m "
-plugins=(git colored-man colorize github jira vagrant virtualenv pip python brew sass osx zsh-syntax-highlighting)
+plugins=(z git colored-man colorize github jira vagrant virtualenv pip python brew sass osx zsh-syntax-highlighting)
+source ~/.tmux/tmuxinator.zsh
+export TERM=xterm-256color
