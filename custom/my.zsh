@@ -20,5 +20,5 @@ alias playOnlineHD2="you-get --format=hd2 -p /opt/homebrew-cask/Caskroom/vlc/2.2
 alias npm="npm --registry=https://registry.npm.taobao.org "
 alias gitci="git add -A && git ci -m "
 plugins=(z git colored-man colorize github pip python brew osx zsh-syntax-highlighting vi-mode)
-# source ~/.tmux/tmuxinator.zsh
+source ~/.tmux/tmuxinator.zsh
 export TERM=screen-256color
