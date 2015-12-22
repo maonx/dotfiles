@@ -21,16 +21,16 @@ alias mux="tmuxinator"
 
 # alias tbsdk="~/Documents/taobaoSDK/TAE_SDK/htdocs"
 # alias snsdk="~/Documents/suningSDK/sn_sdk/htdocs"
-if [[ "$(uname -o)" = "Cygwin" ]]; then
+if [[ "$(uname -s)" = "Cygwin" ]]; then
     alias startSuningSDK="/home/maonx/snSDK/SN_SDK.exe"
     alias startTaobaoSDK="/home/maonx/taobaoSDK/bin/TAE-SDK-Launcher.exe"
-else
+elif [[ "$(uname -s)" = "Darwin" ]]; then
     alias startTaobaoSDK="sh ~/Documents/taobaoSDK/TAE_SDK/bin/startServer.sh"
     alias startSuningSDK="sh ~/Documents/suningSDK/sn_sdk/startServer.sh"
+    alias cleanZip="zip -r --exclude='*_MACOSX*' --exclude='*.sass-cache*' --exclude='*.DS_Store*' "
+    alias playOnlineOrigin="you-get -p /opt/homebrew-cask/Caskroom/vlc/2.2.1/VLC.app/Contents/MacOS/VLC "
+    alias playOnlineHD2="you-get --format=hd2 -p /opt/homebrew-cask/Caskroom/vlc/2.2.1/VLC.app/Contents/MacOS/VLC "
 fi
-alias cleanZip="zip -r --exclude='*_MACOSX*' --exclude='*.sass-cache*' --exclude='*.DS_Store*' "
-alias playOnlineOrigin="you-get -p /opt/homebrew-cask/Caskroom/vlc/2.2.1/VLC.app/Contents/MacOS/VLC "
-alias playOnlineHD2="you-get --format=hd2 -p /opt/homebrew-cask/Caskroom/vlc/2.2.1/VLC.app/Contents/MacOS/VLC "
 
 
 plugins=(z git colored-man colorize github pip python brew osx zsh-syntax-highlighting vi-mode zsh-completions tmuxinator)
