@@ -33,4 +33,4 @@ elif [[ "$(uname -s)" = "Darwin" ]]; then
 fi
 
 
-plugins=(z git colored-man colorize github pip python brew osx zsh-syntax-highlighting vi-mode zsh-completions tmuxinator)
+# plugins=(z git colored-man colorize github pip python brew osx zsh-syntax-highlighting vi-mode zsh-completions tmuxinator)
