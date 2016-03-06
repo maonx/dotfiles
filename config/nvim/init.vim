@@ -1,6 +1,35 @@
+" With a map leader it's possible to do extra key combinations
+" like <leader>w saves the current file
+let mapleader = ","
+let g:mapleader = ","
+
 call plug#begin()
 
 Plug 'godlygeek/tabular'
+" Tabular"{{{
+if exists(":Tabularize")
+    nmap <Leader>a= :Tabularize /=<CR>
+    vmap <Leader>a= :Tabularize /=<CR>
+    nmap <Leader>a: :Tabularize /:\zs<CR>
+    vmap <Leader>a: :Tabularize /:\zs<CR>
+    nmap <Leader>a| :Tabularize / |<CR>
+    vmap <Leader>a| :Tabularize / |<CR>
+endif
+
+"call the :Tabularize command each time you insert a | character
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+
+function! s:align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction"}}}
+
 Plug 'tpope/vim-surround'
 Plug 'Shougo/deoplete.nvim'
 " Deoplete
@@ -11,14 +40,55 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+" Nerd Tree"{{{
+let g:NERDTreeWinPos = "left"
+let NERDTreeShowHidden=0
+let NERDTreeIgnore = ['\.pyc$', '__pycache__', '^NTUSER\.DAT']
+let g:NERDTreeWinSize=30
+map <leader>nn :NERDTreeToggle<cr>
+map <leader>nb :NERDTreeFromBookmark 
+map <leader>nf :NERDTreeFind<cr>
+let g:NERDTreeDirArrows = 1
+"}}}
+
 
 Plug 'tomasr/molokai'
 Plug 'ap/vim-css-color'
 Plug 'hail2u/vim-css3-syntax'
+Plug 'ctrlpvim/ctrlp.vim'
+" CTRL-P"{{{
+" let g:ctrlp_working_path_mode = 0
 
+let g:ctrlp_map = '<leader>f'
+" map <leader>j :CtrlP<cr>
+map <leader>b :CtrlPBuffer<cr>
+
+let g:ctrlp_max_height = 20
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+" set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+"}}}
 Plug 'easymotion/vim-easymotion'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'bling/vim-bufferline'
+" vim-airline config (force color)"{{{
+let g:airline_theme="luna"
+let g:airline_powerline_fonts = 1
+" turn on tabline
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#buffer_nr_show = 1
+" switch buffers
+nnoremap <C-N> :bn<CR>
+nnoremap <C-P> :bp<CR>
+" turn off whitespace
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#whitespace#symbol = '!'
+"}}}
+
 Plug 'tpope/vim-commentary'
+Plug 'mhinz/vim-startify'
 
 Plug 'Yggdroot/indentLine' " highlight indent block
 let g:indentLine_color_term = 239
@@ -26,13 +96,10 @@ let g:indentLine_color_gui = '#A4E57E'
 let g:indentLine_char = '│'
 let g:rainbow_active = 1
 
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 
-" With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
-let mapleader = ","
-let g:mapleader = ","
 
 " set theme
 colorscheme molokai

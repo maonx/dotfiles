@@ -16,8 +16,8 @@ fi
 # link init.vim
 if [ -f "$HOME/.config/nvim/init.vim" ]; then
     mv $HOME/.config/nvim/init.vim $HOME/.config/nvim/init.vim_bak
-    ln -s $DOTFILES/config/nvim/init.vim $HOME/.config/nvim/init.vim
 fi
+ln -s $DOTFILES/config/nvim/init.vim $HOME/.config/nvim/init.vim
 
 # undodirs
 if [ ! -d "$HOME/.config/nvim/undodirs" ]; then
@@ -27,5 +27,5 @@ fi
 # link .zshrc
 if [ -f "$HOME/.zshrc" ]; then
     mv $HOME/.zshrc $HOME/.zshrc_bak
-    ln -s $DOTFILES/zshrc $HOME/.zshrc
 fi
+ln -s $DOTFILES/zshrc $HOME/.zshrc
