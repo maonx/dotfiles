@@ -1,0 +1,13 @@
+alias zshconfig="vim ~/.zshrc"
+alias zshreload="source ~/.zshrc"
+alias npm="npm --registry=https://registry.npm.taobao.org "
+alias gitci="git add -A && git commit -m "
+alias csswatch="sass --sourcemap=none --watch --no-cache "
+alias cssout="sass --sourcemap=none --no-cache "
+alias vi="vim"
+alias addwords="vim ~/.vim/bundle/vimim/plugin/vimim.wubijd.txt"
+alias mux="tmuxinator"
+alias startTaobaoSDK="sh ~/Documents/taobaoSDK/TAE_SDK/bin/startServer.sh"
+alias startSuningSDK="sh ~/Documents/suningSDK/sn_sdk/startServer.sh"
+alias cleanZip="zip -r --exclude='*_MACOSX*' --exclude='*.sass-cache*' --exclude='*.DS_Store*' "
+
