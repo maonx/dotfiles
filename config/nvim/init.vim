@@ -5,6 +5,8 @@ let g:mapleader = ","
 
 call plug#begin()
 
+Plug 'ervandew/supertab'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'godlygeek/tabular'
 " Tabular"{{{
 if exists(":Tabularize")
@@ -72,13 +74,13 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 Plug 'easymotion/vim-easymotion'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'bling/vim-bufferline'
+" Plug 'bling/vim-bufferline'
 " vim-airline config (force color)"{{{
 let g:airline_theme="luna"
 let g:airline_powerline_fonts = 1
 " turn on tabline
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 " switch buffers
 nnoremap <C-N> :bn<CR>
 nnoremap <C-P> :bp<CR>
@@ -120,6 +122,9 @@ set fileencodings=ucs-bom,utf-8,cp936,big5,latin1
 
 "always show current position
 set ruler
+
+" a buffer becomes hidden when it is abandoned
+set hid
 
 " ignore case when searching
 set ignorecase
@@ -193,11 +198,6 @@ set wrap "wrap lines
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
 
-" Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
 
 " Close the current buffer
 map <leader>bd :Bclose<cr>
@@ -252,6 +252,8 @@ cnoremap <C-N> <Down>"}}}
 
 " FileType {{{
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4
+autocmd BufRead *.ftl set ft=html
+autocmd FileType html UltiSnipsAddFiletypes ftl
 " }}}
 
 " Misc"{{{
@@ -348,3 +350,16 @@ endfunc
 func! CurrentFileDir(cmd)
     return a:cmd . " " . expand("%:p:h") . "/"
   endfunc"}}}
+let g:tmux_navigator_no_mappings = 1
+
+" Smart way to move between windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <C-;> :TmuxNavigatePrevious<cr>
+

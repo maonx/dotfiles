@@ -1,0 +1,25 @@
+snippet param "param parameters" b
+<parameters width="${1:1000}">
+	$2
+</parameters>$0
+endsnippet
+
+snippet group "param group" b
+<group title="$1">
+	$2
+</group>$0
+endsnippet
+
+snippet row "param row" b
+<row>
+	$1
+</row>$0
+endsnippet
+
+snippet text "param text" b
+<param label="$1" name="$2" formType="text" description="$3" />$0
+endsnippet
+
+snippet textarea "param textarea" b
+<param label="$1" name="$2" formType="textarea" description="$3" />$0
+endsnippet
