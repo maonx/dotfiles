@@ -5,6 +5,10 @@ let g:mapleader = ","
 
 call plug#begin()
 
+Plug 'rking/ag.vim'
+let g:ag_prg="ag --vimgrep"
+let g:ag_working_path_mode="r"
+
 Plug 'ervandew/supertab'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'godlygeek/tabular'
@@ -39,6 +43,7 @@ let g:deoplete#enable_at_startup = 1
 
 " Group dependencies, vim-snippets depends on ultisnips
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+let g:UltiSnipsExpandTrigger="<c-j>"
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -350,16 +355,20 @@ endfunc
 func! CurrentFileDir(cmd)
     return a:cmd . " " . expand("%:p:h") . "/"
   endfunc"}}}
-let g:tmux_navigator_no_mappings = 1
 
 " Smart way to move between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
-nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
+map <C-A-h> :vertical resize +5<cr>
+map <C-A-l> :vertical resize -5<cr>
+map <C-A-j> :resize -5<cr>
+map <C-A-k> :resize +5<cr>
+let g:tmux_navigator_no_mappings = 1
 nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
-nnoremap <silent> <C-;> :TmuxNavigatePrevious<cr>
+" nnoremap <silent> <C-'> :TmuxNavigatePrevious<cr>
 

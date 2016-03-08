@@ -1,0 +1,7 @@
+[option]
+#font = Hermit 13
+font = Monaco 13
+mouse_autohide = true
+clickable_url = true
+browser = chromium
+
