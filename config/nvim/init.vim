@@ -10,6 +10,7 @@ let g:ag_prg="ag --vimgrep"
 let g:ag_working_path_mode="r"
 
 Plug 'ervandew/supertab'
+let g:SuperTabDefaultCompletionType = "<c-n>"
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'godlygeek/tabular'
 " Tabular"{{{

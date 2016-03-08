@@ -37,10 +37,14 @@ fi
 ln -s $DOTFILES/tmux.conf $HOME/.tmux.conf
 
 # link UltiSnips dir
-if [ -d "$HOME/.config/nvim/UltiSnips" ]; then
-  mv $HOME/.config/nvim/UltiSnips $HOME/.config/nvim/UltiSnips_bak
+if [ ! -L "$HOME/.config/nvim/UltiSnips" ]; then
+  if [ -d "$HOME/.config/nvim/UltiSnips" ]; then
+    if [ ! -d "$HOME/.config/nvim/UltiSnips_bak" ]; then
+      mv $HOME/.config/nvim/UltiSnips $HOME/.config/nvim/UltiSnips_bak
+    fi
+  fi
+  ln -s $DOTFILES/config/nvim/UltiSnips $HOME/.config/nvim/UltiSnips
 fi
-ln -s $DOTFILES/config/nvim/UltiSnips $HOME/.config/nvim/UltiSnips
 
 
 # link termite config
