@@ -1,0 +1,28 @@
+snippet full "full screen html" b
+<div style="height:$1px;">
+	<div class="footer-more-trigger mui-mbar-cat sn-simple-logo"
+	style="border:0;padding:0;line-height:0;display:block;left:50%;top:auto;width:1920px;height:$2px;z-index:9;">
+		<div class="footer-more-trigger mui-mbar-cat sn-simple-logo"
+		style="border:0;line-height:0;padding:0;display:block;left:-50%;top:0px;width:1920px;height:$2px;z-index:9;">
+			$3
+		</div>
+	</div>
+</div>$0
+endsnippet
+
+snippet popup "popup html" b
+<div class="J_TWidget hidden" data-widget-type="Popup" data-widget-config="{ 'trigger':'.$1', 'align':{ 'node':'.$1', 'offset':[0,0], 'points':['${2:cc}','${3:cc}'] } }">
+	<div>
+		$4
+	</div>
+</div>$0
+endsnippet
+
+snippet carousel "carousel html" b
+<div class=”J_TWidget”  data-widget-type=”Carousel”  data-widget-config=”{
+'effect': '${1:scrollx}', ${2:'easing': 'easeOutStrong',} ${3:'steps': 1,}
+${4:'viewSize': [680],}${5:'circular': false,} 'prevBtnCls': 'prev',
+'nextBtnCls': 'next', ${6:'disableBtnCls': 'disable',} }”>
+$20
+</div>$0
+endsnippet
