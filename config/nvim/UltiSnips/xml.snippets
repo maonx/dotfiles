@@ -48,3 +48,29 @@ endsnippet
 snippet textarea-tb "tb param textarea" b
 <param description="$1" formType="textarea" label="$2" name="$3" ptype="textarea" readonly="false">$4</param>$0
 endsnippet
+
+snippet tip-sn "param sn tip" b
+<param class="sn_tip" formType="tip" content="$1" />$0
+endsnippet
+
+snippet sn_showText "sn param showText" b
+<param formType="showText" label="$1" fontColor="#$2" />$0
+endsnippet
+
+snippet sn_radio "sn param radio" b
+<param description="$1" formType="radio" label="$2" name="$3">
+	<option value="1" checked="checked">$4</option>
+	<option value="0">$5</option>
+</param>$0 
+endsnippet
+
+snippet sn_select "sn param select" b
+<param description="$1" formType="select" label="$2" name="$3">
+	<option value="1" checked="checked">$4</option>
+	<option value="0">$5</option>
+</param>$0 
+endsnippet
+
+snippet sn_item "sn param item" b
+<param description="$1" class="sn_product" num="${2:50}" formType="product" label="$3" name="item" ptype="item" for="$4">${5:选择任意个商品}</param>$0
+endsnippet
