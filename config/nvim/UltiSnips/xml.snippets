@@ -1,4 +1,4 @@
-snippet param "param parameters" b
+snippet sn_param "param parameters" b
 <parameters width="${1:1000}">
 	$2
 </parameters>$0
@@ -10,46 +10,46 @@ snippet group "param group" b
 </group>$0
 endsnippet
 
-snippet row "param row" b
+snippet sn_row "param row" b
 <row>
 	$1
 </row>$0
 endsnippet
 
-snippet text-sn "sn param text" b
+snippet sn_text "sn param text" b
 <param label="$1" name="$2" formType="text" description="$3" />$0
 endsnippet
 
-snippet textarea-sn "sn param textarea" b
+snippet sn_textarea "sn param textarea" b
 <param label="$1" name="$2" formType="textarea" description="$3" />$0
 endsnippet
 
-snippet color "param color" b
-<param label="$1" name="$2" formType="color" description="$3" />$0
+snippet sn_color "param color" b
+<param label="$1" name="$2" formType="color" description="$3" ptype="color" class="sn_color"/>$0
 endsnippet
 
-snippet section "param taobao section" b
+snippet tb_section "param taobao section" b
 <section title="$1" folded="${2:true}">
 	$3
 </section>$0
 endsnippet
 
-snippet range-tb "param tb range" b
+snippet tb_range "param tb range" b
 <param description="$1" formType="range" label="${2:是否显示}" name="${3:hid}" ptype="text" readonly="false">
 	<option value="1" selected="selected">${4:显示}</option>
 	<option value="2">${5:隐藏}</option>
 </param>$0
 endsnippet
 
-snippet text-tb "tb param text" b
+snippet tb_text "tb param text" b
 <param description="$1" formType="text" label="$2" name="$3" ptype="text" readonly="false">$4</param>$0
 endsnippet
 
-snippet textarea-tb "tb param textarea" b
+snippet tb_textarea "tb param textarea" b
 <param description="$1" formType="textarea" label="$2" name="$3" ptype="textarea" readonly="false">$4</param>$0
 endsnippet
 
-snippet tip-sn "param sn tip" b
+snippet sn_tip "param sn tip" b
 <param class="sn_tip" formType="tip" content="$1" />$0
 endsnippet
 

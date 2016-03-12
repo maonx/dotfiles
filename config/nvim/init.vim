@@ -2,10 +2,10 @@
 " like <leader>w saves the current file
 let mapleader = ","
 let g:mapleader = ","
-
 call plug#begin()
 
-Plug 'vim-scripts/fcitx.vim'
+" Plug 'vim-scripts/fcitx.vim'
+Plug 'CodeFalling/fcitx-vim-osx'
 Plug 'rking/ag.vim'
 let g:ag_prg="ag --vimgrep"
 let g:ag_working_path_mode="r"
@@ -222,6 +222,7 @@ map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
 " Editing mappings"{{{
 " Remap VIM 0 to first non-blank character
+map 9 0
 map 0 ^
 " copy paste
 vnoremap <Leader>y "+y
