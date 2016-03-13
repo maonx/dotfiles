@@ -19,10 +19,19 @@ snippet popup "popup html" b
 endsnippet
 
 snippet carousel "carousel html" b
-<div class=”J_TWidget”  data-widget-type=”Carousel”  data-widget-config=”{
-'effect': '${1:scrollx}', ${2:'easing': 'easeOutStrong',} ${3:'steps': 1,}
-${4:'viewSize': [680],}${5:'circular': false,} 'prevBtnCls': 'prev',
-'nextBtnCls': 'next', ${6:'disableBtnCls': 'disable',} }”>
+<div class="J_TWidget"  data-widget-type="Carousel"  data-widget-config=”{ 'effect': '${1:scrollx}', ${2:'easing': 'easeOutStrong',} ${3:'steps': 1,} ${4:'viewSize': [680],}${5:'circular': false,} 'prevBtnCls': 'prev', 'nextBtnCls': 'next', ${6:'disableBtnCls': 'disable',} }">
 $20
 </div>$0
+endsnippet
+
+snippet slide "slide html" b
+<div class="J_TWidget " data-widget-type="Slide" data-widget-config="
+{'effect': '${1:scrollx}', ${2:'easing': 'easeOutStrong',} ${3:'steps': 1,} 
+${4:'viewSize': [680],}${5:'circular': false,} ${6:'disableBtnCls': 'disable',} }">
+$20
+</div>$0
+endsnippet
+
+snippet img "img html" w
+<img src="$1" alt="" >$0
 endsnippet
