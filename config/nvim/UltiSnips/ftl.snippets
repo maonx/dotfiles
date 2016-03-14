@@ -15,3 +15,31 @@ endsnippet
 snippet ass "freemaker assign" w
 <#assign $1 />$0
 endsnippet
+
+snippet countdown "sn time countdown" w
+<div class="SN_Widget countdown" data-widget-type="Countdown" data-widget-config="{
+          'endTime': '$1',
+          'interval': 1000,
+          'timeRunCls': '.ds-countdown-run',
+          'timeUnitCls':{
+          'd': '.ds-d',      
+          'h': '.ds-h',      
+          'm': '.ds-m',      
+          's': '.ds-s',      
+          'i': '.ds-i'       
+          },
+          'timeEndCls': '.ds-countdown-end'
+          }">
+            <div class="ds-countdown-run" style="">	
+              <span class="hdzt">距离活动结束仅剩</span>
+              <span class="ds-d" style=""></span>
+              <span class="zwzt">天</span>
+              <span class="ds-h" style=""></span>
+              <span class="zwzt">时</span>
+              <span class="ds-m" style=""></span>
+              <span class="zwzt">分</span>
+              <span class="ds-s" style=""></span>
+              <span class="zwzt">秒</span>
+            </div>
+</div>$0
+endsnippet
