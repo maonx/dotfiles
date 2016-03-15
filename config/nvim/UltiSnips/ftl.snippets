@@ -12,6 +12,14 @@ snippet v "freemaker value symbol $" w
 \$\{$1\}$0
 endsnippet
 
+snippet va "value array" w
+\$\{$1[$2_index]\}$0
+endsnippet
+
+snippet sv "freemaker style value" w
+style="\$\{$1\}"$0
+endsnippet
+
 snippet ass "freemaker assign" w
 <#assign $1 />$0
 endsnippet
@@ -42,4 +50,22 @@ snippet countdown "sn time countdown" w
               <span class="zwzt">秒</span>
             </div>
 </div>$0
+endsnippet
+
+snippet split "split array " w
+$1s = $1?split('${2:|}') $0
+endsnippet
+
+snippet if "if funtion" w
+<#if $1 >
+	$2
+</#if>$0
+endsnippet
+
+snippet ifelse "if else funtion" w
+<#if $1 >
+	$2
+<#else>
+	$3
+</#if>$0
 endsnippet
