@@ -1,0 +1,7 @@
+SHELL=/bin/bash
+HOME=/home/arch
+PATH=/bin:/usr/local/bin:/usr/bin/:/hom/arch/dotfiles/scripts
+
+* * * * * /bin/bash /home/arch/dotfiles/scripts/resizeImage.sh
+* 0 * * * rm -rf /home/arch/work/dest/*
+* * * * * /bin/bash /home/arch/dotfiles/scripts/classifier.sh /home/arch/work/Pictures/ -dt
