@@ -1,4 +1,4 @@
-#!/bin/evn bash
+#!/usr/bin/env bash
 
 # Install command-line tools using Homebrew.
 
@@ -19,7 +19,22 @@ brew install neovim/neovim/neovim
 # Install nevim python3 plugin
 # sudo pip3 install neovim
 
+brew install tmux
+brew install proxychains-ng
+brew install pyenv
+# brew install python3
+# pyenv install --list
+# pyenv install 3.5.1
+# pyenv global 3.5.1
+# pyenv rehash
+brew install tree
 
+
+# Install brew cask
+brew install brew-cask
+#Install Appliations by brew cask
+brew cask install qq
+brew cask install shadowsocksx
 
 
 

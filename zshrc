@@ -55,7 +55,7 @@ plugins=(z git colored-man colorize github pip python brew osx zsh-syntax-highli
 
 # User configuration
 
-export PATH=$HOME/dotfiles/scripts:$HOME/.gem/ruby/2.3.0/bin:$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/dotfiles/scripts:$HOME/.gem/ruby/2.3.0/bin:$HOME/bin:/usr/local/sbin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -85,3 +85,5 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source $HOME/dotfiles/alias.sh
+export PYENV_ROOT=/usr/local/var/pyenv
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #切换为国内中科大的更新源
 cd /usr/local
