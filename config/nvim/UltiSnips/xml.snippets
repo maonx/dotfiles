@@ -93,3 +93,63 @@ endsnippet
 snippet sn_item "sn param item" b
 <param description="$1" class="sn_product" num="${2:50}" formType="product" label="$3" name="item" ptype="item" for="$4">${5:选择任意个商品}</param>$0
 endsnippet
+
+snippet utrack "wxmb userTrack" b
+<userTrack>
+	<utParams>
+		<params>
+			<param name="wp_p" value="${1:1}" />
+		</params>
+	</utParams>
+</userTrack> $0
+endsnippet
+
+snippet ui "wxmb ui view" b
+<ui>
+	<view>
+		$1
+	</view>
+</ui>$0
+endsnippet
+
+snippet editp "wxmb editProperty" b
+<editProperty moduleType="$1">
+	<descriptions>
+		<description type="${2:text}" message="$3" />
+	</descriptions>
+	<dataDefines>
+		$4
+	</dataDefines>
+</editProperty> $0
+endsnippet
+
+snippet data "wxmb dataDefine" b
+<dataDefine name="$1" type="$2" description="$3" isNull="${4:true}" propertyName="$5" $6 /> $0
+endsnippet
+
+snippet container "xwmb container " b
+<container>
+	<layout ${1:type="linearLayout"} ${2:type="absoluteLayout"}
+	${3:orientation="horizontal"} $4 /> $0
+</container>
+endsnippet
+
+snippet eve "wxmb event" b
+<events>
+	<event type="click">
+		<actions>
+		$1
+		</actions>
+	</event>
+</events> $0
+endsnippet
+
+snippet style "wxmb styleBinding" b
+<styleBinding>
+	$1
+</styleBinding> $0
+endsnippet
+
+snippet attr "wxmb styleBinding attribute" b
+<attribute name="$1" value="$2" /> $0
+endsnippet

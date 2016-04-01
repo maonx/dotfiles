@@ -190,7 +190,7 @@ set tw=79
 
 set ai "auto indent
 set si "smart indent
-set wrap "wrap lines
+" set wrap "wrap lines
 "}}}
 
 " moving around, tabs, windows and buffers"{{{
