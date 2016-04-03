@@ -123,8 +123,20 @@ snippet editp "wxmb editProperty" b
 </editProperty> $0
 endsnippet
 
-snippet data "wxmb dataDefine" b
-<dataDefine name="$1" type="$2" description="$3" isNull="${4:true}" propertyName="$5" $6 /> $0
+snippet data_define "wxmb dataDefine" b
+<dataDefine name="$1" type="$2" description="$3" isNull="${4:true}" propertyName="$5" $6 > $7</dataDefine> $0
+endsnippet
+
+snippet data_radio "wxmb radio dataDefine" b
+<dataDefine name="$1" type="radio" description="$3" isNull="${4:true}" propertyName="$5" $6 >
+	<config type="sync">
+		$7
+	</config>
+</dataDefine> $0
+endsnippet
+
+snippet data "wxmb dataDefine config data" b
+<data text="$1" value="$2" ${3:defaultSelect="true"} /> $0
 endsnippet
 
 snippet container "xwmb container " b
@@ -152,4 +164,34 @@ endsnippet
 
 snippet attr "wxmb styleBinding attribute" b
 <attribute name="$1" value="$2" /> $0
+endsnippet
+
+snippet param_wx "wxmb param" b
+<param name="$1" type="$2" description="$3" propertyName="$4"
+isNull="${5:true}" $6 /> $0
+endsnippet
+
+snippet foreach "wxmb foreach" b
+<foreach start="${1:0}" step="${2:1}" >
+	<array value="$3" />
+	<template>
+		<image url="$3.[?].image">
+			$4
+		</image>
+	</template>
+</foreach> $0
+endsnippet
+
+snippet openurl "wxmb openURL" b
+<openURL url="$1.[?].url">
+	$2
+</openURL> $0
+endsnippet
+
+snippet cod "wxmb conditions" b
+<conditions>
+	<condition type="$1" left="$2" right="$3">
+		$4
+	</condition> $5
+</conditions> $0
 endsnippet
