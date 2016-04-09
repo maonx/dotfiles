@@ -195,3 +195,75 @@ snippet cod "wxmb conditions" b
 	</condition> $5
 </conditions> $0
 endsnippet
+
+snippet image_quality "wxmb image_quality " b
+<dataDefine name="image_quality" type="select" description=""
+propertyName="图片质量">
+	<config type="sync">
+		<data  text="最优" value="-1" />
+		<data  text="一般" value="0" />
+		<data  text="良" value="1" />
+		<data  text="优" value="2" defaultSelect="true" />
+	</config>
+</dataDefine> $0
+endsnippet
+
+snippet image_size "wxmb image_size " b
+<dataDefine name="image_size" type="select" description=""
+propertyName="图片尺寸">
+	<config type="sync">
+		<data  text="640x80" value="80" />
+		<data  text="640x160" value="160" />
+		<data  text="640x240" value="240" />
+		<data  text="640x280" value="280" />
+		<data  text="640x320" value="320" />
+		<data  text="640x360" value="360" />
+		<data  text="640x400" value="400" />
+		<data  text="640x408" value="408" defaultSelect="true" />
+		<data  text="640x440" value="440" />
+		<data  text="640x480" value="480" />
+		<data  text="640x520" value="520" />
+		<data  text="640x560" value="560" />
+		<data  text="640x600" value="600" />
+		<data  text="640x640" value="640" />
+		<data  text="640x680" value="680" />
+		<data  text="640x720" value="720" />
+		<data  text="640x760" value="760" />
+		<data  text="640x800" value="800" />
+	</config>
+</dataDefine> $0
+endsnippet
+
+snippet autoplay "wxmb autoplay lbmk" b
+<dataDefine name="autoPlay" type="radio" description="" propertyName="轮播方式" >
+	<config type="sync">
+		<data  text="自动播放" value="1" defaultSelect="true" />
+		<data  text="手指滑动" value="0" />
+	</config>
+</dataDefine> $0
+endsnippet
+
+snippet dotdisplay "wxmb dotDisplay lbmk" b
+<dataDefine name="dotDisplay" type="radio" description="" propertyName="轮播圆点" >
+	<config type="sync">
+		<data  text="显示" value="1" defaultSelect="true" />
+		<data  text="隐藏" value="0" />
+	</config>
+</dataDefine> $0
+endsnippet
+
+snippet jsonarray "wxmb json array " b
+<dataDefine name="$1" type="jsonArray" min="${2:1}" max="$3" propertyName="$4">
+	$5
+</dataDefine>$0
+endsnippet
+
+snippet imageparam "wxmb image param" b
+<param name="${1:image}" type="image" description="请输入图片url"
+width="${2:640}" height="$3" propertyName="图片" />$0
+endsnippet
+
+snippet urlparam "wxmb url param" b
+<param name="${1:url}" type="url" description="请输入图片跳转页面url"
+validateType="taokeurl||wirelessurl" isNull="true" propertyName="链接" />$0
+endsnippet
