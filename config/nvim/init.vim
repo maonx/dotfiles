@@ -180,7 +180,7 @@ set expandtab
 " be smart when using tabs ;)
 set smarttab
 
-" 1 tab == 4 spaces
+" 1 tab == 2 spaces
 set shiftwidth=2
 set tabstop=2
 
@@ -222,8 +222,7 @@ map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
 " Editing mappings"{{{
 " Remap VIM 0 to first non-blank character
-map 9 0
-map 0 ^
+map - ^
 " copy paste
 vnoremap <Leader>y "+y
 nmap <Leader>p "+p

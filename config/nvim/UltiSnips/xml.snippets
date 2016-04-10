@@ -123,11 +123,11 @@ snippet editp "wxmb editProperty" b
 </editProperty> $0
 endsnippet
 
-snippet data_define "wxmb dataDefine" b
+snippet dataDefine "wxmb dataDefine" b
 <dataDefine name="$1" type="$2" description="$3" isNull="${4:true}" propertyName="$5" $6 > $7</dataDefine> $0
 endsnippet
 
-snippet data_radio "wxmb radio dataDefine" b
+snippet dataRadio "wxmb radio dataDefine" b
 <dataDefine name="$1" type="radio" description="$3" isNull="${4:true}" propertyName="$5" $6 >
 	<config type="sync">
 		$7
@@ -141,12 +141,11 @@ endsnippet
 
 snippet container "xwmb container " b
 <container>
-	<layout ${1:type="linearLayout"} ${2:type="absoluteLayout"}
-	${3:orientation="horizontal"} $4 /> $0
+	<layout type="${1:linear}Layout" ${3:orientation="horizontal"} /> $0
 </container>
 endsnippet
 
-snippet eve "wxmb event" b
+snippet event "wxmb event" b
 <events>
 	<event type="click">
 		<actions>
@@ -166,7 +165,7 @@ snippet attr "wxmb styleBinding attribute" b
 <attribute name="$1" value="$2" /> $0
 endsnippet
 
-snippet param_wx "wxmb param" b
+snippet param "wxmb param" b
 <param name="$1" type="$2" description="$3" propertyName="$4"
 isNull="${5:true}" $6 /> $0
 endsnippet
@@ -196,7 +195,7 @@ snippet cod "wxmb conditions" b
 </conditions> $0
 endsnippet
 
-snippet image_quality "wxmb image_quality " b
+snippet imageQuality "wxmb image_quality " b
 <dataDefine name="image_quality" type="select" description=""
 propertyName="图片质量">
 	<config type="sync">
@@ -208,7 +207,7 @@ propertyName="图片质量">
 </dataDefine> $0
 endsnippet
 
-snippet image_size "wxmb image_size " b
+snippet imageSize "wxmb image_size " b
 <dataDefine name="image_size" type="select" description=""
 propertyName="图片尺寸">
 	<config type="sync">
@@ -259,11 +258,161 @@ snippet jsonarray "wxmb json array " b
 endsnippet
 
 snippet imageparam "wxmb image param" b
-<param name="${1:image}" type="image" description="请输入图片url"
+<param name="${1:image}" type="image" description="请输入图片url" isNull="true"
 width="${2:640}" height="$3" propertyName="图片" />$0
 endsnippet
 
 snippet urlparam "wxmb url param" b
 <param name="${1:url}" type="url" description="请输入图片跳转页面url"
 validateType="taokeurl||wirelessurl" isNull="true" propertyName="链接" />$0
+endsnippet
+
+snippet setting "wxmb setting dataDefine" b
+<dataDefine name="setting" type="radio" description="" propertyName="高级设置" >
+	<config type="sync">
+		<data  text="收起" value="0" defaultSelect="true" />
+		<data  text="展开" value="1" />
+	</config>
+</dataDefine> 
+endsnippet
+
+snippet bottom "wxmb margin bottom" b
+<dataDefine name="marginBottom" type="select" description="" propertyName="模块下间距" refer="setting:1">
+	<config type="sync">
+		<data  text="24" value="24" defaultSelect="true" />
+		<data  text="16" value="16" />
+		<data  text="8" value="8" />
+		<data  text="0" value="0" />
+	</config>
+</dataDefine> $0
+endsnippet
+
+snippet dataText "wxmb text dataDefine" b
+<dataDefine name="$1" type="text" description="" propertyName="$2"
+isNull="true" contentSize="$3" ${4:refer="setting:1"} /> $0
+endsnippet
+
+snippet subviews "wxmb subVeiws" b
+<subViews>
+	$1
+</subViews> $0
+endsnippet
+
+snippet wzcolor "wz color text" w
+(输入色值:如#FFFFFF)$0
+endsnippet
+
+snippet dataColor "wxmb text color  dataDefine" b
+<dataDefine name="$1" type="text" description="" isNull="true"
+propertyName="$2(输入色值:如#FFFFFF)" contentSize="7" refer="setting:1" /> $0
+endsnippet
+
+snippet marginbottom "margin bottom conditions" b
+<container>
+	<styleBinding>
+		<attribute name="width" value="-1" /> 
+		<attribute name="height" value="\$marginBottom" /> 
+	</styleBinding> 
+	<conditions>
+		<condition type="!=" left="\$marginColor" right="null">
+			<styleBinding>
+				<attribute name="backgroundColor" value="\$marginColor" /> 
+			</styleBinding> 
+		</condition> 
+	</conditions> 
+</container> 
+endsnippet
+
+snippet dataItems "wxmb items dataDefine" b
+<dataDefine name="isAuto" type="radio" isNull="true"
+						propertyName="推荐类型" description="是否是自动推荐列表">
+						<config type="sync">
+							<data text="自动推荐" value="true" defaultSelect="true" />
+							<data text="手动推荐" value="false" defaultSelect="false" />
+						</config>
+					</dataDefine>
+					<dataDefine name="itemIds" type="sellerGoods" isNull="false"
+						propertyName="宝贝" description="宝贝" refer="isAuto:false"
+						validateType="shopItemids" max="6" min="1" />
+					<dataDefine name="pageSize" type="select" isNull="true"
+						propertyName="宝贝个数" description="宝贝个数" refer="isAuto:true">
+						<config type="sync">
+							<data text="1" value="1" defaultSelect="true" />
+							<data text="2" value="2" defaultSelect="false" />
+							<data text="3" value="3" defaultSelect="false" />
+							<data text="4" value="4" defaultSelect="false" />
+							<data text="5" value="5" defaultSelect="false" />
+							<data text="6" value="6" defaultSelect="false" />
+						</config>
+
+					</dataDefine>
+
+					<dataDefine name="filterPrice" type="price" isNull="true"
+						propertyName="过滤价格" description="过滤价格" refer="isAuto:true"
+						validateType="price">
+						<param name="startPrice" type="text" isNull="true"
+							propertyName="起始价格" description="起始价格" refer="isAuto:true"
+							validateType="price" />
+						<param name="endPrice" type="text" isNull="true"
+							propertyName="结束价格" description="结束价格" refer="isAuto:true"
+							validateType="price" />
+					</dataDefine>
+
+					<dataDefine name="keyWord" type="text" max="30"
+						contentSize="30" isNull="true" propertyName="关键字" description="关键字"
+						refer="isAuto:true" />
+					<dataDefine name="sort" type="select" isNull="true"
+						propertyName="排序规则" description="排序规则" refer="isAuto:true">
+						<config type="sync">
+							<data text="上新" value="oldstarts" defaultSelect="true" />
+							<data text="销量" value="hotsell" defaultSelect="false" />
+							<data text="价格（由低到高）" value="bid" defaultSelect="false" />
+						</config>
+					</dataDefine>
+
+					<dataDefine name="catId" type="select" isNull="true"
+						propertyName="类目" description="类目id" refer="isAuto:true">
+						<config type="async">
+							<asyncData url="/decorate/ajax/select/GetShopCategorySelect.do" />
+						</config>
+					</dataDefine>
+endsnippet
+
+snippet backgroundColor "backgroundColor conditions" b
+<conditions>
+	<condition type="!=" left="$mkbj" right="null">
+		<styleBinding>
+			<attribute name="backgroundColor" value="$mkbj" /> 
+		</styleBinding> 
+	</condition> 
+</conditions>       
+endsnippet
+
+snippet itemsDate "items dataBinding" b
+<!-- 数据绑定 -->
+<dataBinding>
+	<api needLogin="false" apiAlias="itemList" apiName="mtop.taobao.geb.enhenced.itemList.get">
+		<params>
+			<param name="itemIds" value="\$itemIds" />
+			<param name="pageSize" value="\$pageSize" />
+			<param name="auctionTag" value="\$auctionTag" />
+			<param name="startPrice" value="\$filterPrice.startPrice" />
+			<param name="endPrice" value="\$filterPrice.endPrice" />
+			<param name="keyWord" value="\$keyWord" />
+			<param name="sort" value="\$sort" />
+			<param name="catId" value="\$catId" />
+			<param name="pageId" value="\$pageId" />
+			<param name="ownerId" value="\$userId" />
+			<param name="isAuto" value="\$isAuto" />
+			<!-- 1代表卖家 -->
+			<param name="userType" value="1" />
+		</params>
+	</api>
+</dataBinding>
+endsnippet
+
+snippet grid "wxmb grid" b
+<grid unScroll="true" gridColumn="2" needDownRefresh="false" needNextPage="false">
+	$1
+</grid> $0
 endsnippet
