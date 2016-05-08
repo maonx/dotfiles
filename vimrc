@@ -11,6 +11,7 @@ let g:mapleader = ","
 call plug#begin()
 Plug 'gorodinskiy/vim-coloresque'
 Plug 'Shougo/neocomplete.vim'
+Plug 'edsono/vim-matchit'
 "Neocomplete"{{{
 let g:neocomplete#enable_at_startup = 1
 "popup width
@@ -143,7 +144,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 
 let g:ctrlp_map = '<leader>f'
 map <leader>j :CtrlP<cr>
-map <c-b> :CtrlPBuffer<cr>
+" map <c-b> :CtrlPBuffer<cr>
 
 let g:ctrlp_max_height = 20
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
@@ -231,7 +232,6 @@ set ffs=unix,dos,mac
 " set foldmethod
 set foldmethod=marker
 set ruler
-set colorcolumn=80
 map - ^
 " copy paste
 vnoremap <Leader>y "+y
@@ -239,7 +239,8 @@ nmap <Leader>p "+p
 nmap <Leader>P "+P
 noremap <silent> <leader>R :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
-set textwidth=78
+set colorcolumn=79
+" set textwidth=78
 
 " Fast saving
 nmap <leader>w :w!<cr>
@@ -248,3 +249,17 @@ if has('gui_running')
   set guifont=Hermit:h14
   set guioptions=""
 endif
+
+" Smart way to move between windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+map <C-A-h> :vertical resize +5<cr>
+map <C-A-l> :vertical resize -5<cr>
+map <C-A-j> :resize -5<cr>
+map <C-A-k> :resize +5<cr>
+
+nmap g= gg=G``
+nmap <F2> ggvG$"+y``
+
