@@ -1,10 +1,18 @@
-snippet sn_param "param parameters" b
+#---------------------------------#
+#		 taobao snippets							#
+#---------------------------------#
+
+snippet set-color-tb "set taobao color param"
+<param description="输入16进制颜色值,如:#FFFFFF" formType="text" label="$1" name="${2:mkbjs}" ptype="text" readonly="false">$3</param> $0
+endsnippet
+
+snippet parameters-sn "param parameters" b
 <parameters width="${1:1000}">
 	$2
 </parameters>$0
 endsnippet
 
-snippet tb_param "param parameters" b
+snippet parameters-tb "taobao parameters" b
 <parameters>
 	$2
 </parameters>$0
@@ -16,13 +24,13 @@ snippet group "param group" b
 </group>$0
 endsnippet
 
-snippet sn_row "param row" b
+snippet row-sn "suning param row" b
 <row>
 	$1
 </row>$0
 endsnippet
 
-snippet sn_text "sn param text" b
+snippet text-sn "suning param text" b
 <param label="$1" name="$2" formType="text" description="$3" />$0
 endsnippet
 
@@ -34,25 +42,25 @@ snippet sn_color "param color" b
 <param label="$1" name="$2" formType="color" description="$3" ptype="color" class="sn_color"/>$0
 endsnippet
 
-snippet tb_section "param taobao section" b
+snippet section-tb "param taobao section" b
 <section title="$1" folded="${2:true}">
 	$3
 </section>$0
 endsnippet
 
-snippet tb_item "param taobao item" b
+snippet item-tb "param taobao item" b
 <param readonly="false" ptype="item" name="${1:xzbb}" label="${2:选择宝贝}"
 formType="itemForm" description="$3"/> $0
 endsnippet
 
-snippet tb_range "param tb range" b
+snippet range-tb "param tb range" b
 <param description="$1" formType="range" label="${2:是否显示}" name="${3:hid}" ptype="text" readonly="false">
 	<option value="1" selected="selected">${4:显示}</option>
 	<option value="2">${5:隐藏}</option>
 </param>$0
 endsnippet
 
-snippet tb_select "param tb range" b
+snippet select-tb "param tb range" b
 <param description="$1" formType="select" label="${2:是否显示}" name="${3:hid}" ptype="text" readonly="false">
 	<option value="1" selected="selected">${4:显示}</option>
 	<option value="2">${5:隐藏}</option>
@@ -60,11 +68,11 @@ snippet tb_select "param tb range" b
 endsnippet
 
 
-snippet tb_text "tb param text" b
+snippet text-tb "tb param text" b
 <param description="$1" formType="text" label="$2" name="$3" ptype="text" readonly="false">$4</param>$0
 endsnippet
 
-snippet tb_textarea "tb param textarea" b
+snippet textarea-tb "tb param textarea" b
 <param description="$1" formType="textarea" label="$2" name="$3" ptype="textarea" readonly="false">$4</param>$0
 endsnippet
 

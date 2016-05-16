@@ -163,6 +163,7 @@ set showcmd                     "Show incomplete cmds down the bottom
 set showmode                    "Show current mode down the bottom
 set autoread                    "Reload files changed outside vim
 set laststatus=2                "Always show the status line
+set hidden
 
 colorscheme molokai "theme
 
