@@ -225,6 +225,7 @@ set hlsearch
 " Makes search act like search in modern browsers
 set incsearch 
 
+set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,big5,latin1
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
@@ -247,7 +248,7 @@ set colorcolumn=79
 nmap <leader>w :w!<cr>
 
 if has('gui_running') 
-  set guifont=Hermit:h14
+  set guifont=Hermit:h13
   set guioptions=""
 endif
 
