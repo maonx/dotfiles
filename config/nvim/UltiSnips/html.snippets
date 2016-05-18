@@ -40,7 +40,7 @@ endsnippet
 
 snippet countdown "widget countdown" w
 <div class="J_TWidget djs" data-widget-type="Countdown" data-widget-config="{
-		'endTime': '<?=get('djs'.$i)?>',
+		'endTime': '$1',
 		'interval': 1000,
 		'timeRunCls': '.ks-countdown-run',
 		'timeUnitCls':{
@@ -53,8 +53,8 @@ snippet countdown "widget countdown" w
 		'minDigit': 1,
 		'timeEndCls': '.ks-countdown-end'
 		}">
-				<div class="ks-countdown-run" style="<?php echo $fgxbj.gztys(djsys) ?>">	
-				<span class="wz wz1"><?=$djswz?></span>
+				<div class="ks-countdown-run" style="">	
+				<span class="wz wz1"></span>
 						<span class="wz wzlast">秒</span>
 						<span class="ks-s"></span>
 						<span class="wz">分</span>

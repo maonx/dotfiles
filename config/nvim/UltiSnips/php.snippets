@@ -1,0 +1,40 @@
+snippet get "get MODULE" w
+$_MODULE['$1']$0
+endsnippet
+
+snippet items-select "taobao items select" w
+$items=$itemManager->queryByIds(explode(',',$1,"");$0
+endsnippet
+
+snippet items-auto "taobao items auto load" w
+$items=$itemManager->queryByKeyword(' ', '${1:_sell}',$2);$0
+endsnippet
+
+snippet item-pic "taobao getPicUrl" w
+$item->getPicUrl($1);$0
+endsnippet
+
+
+snippet item-sj "taobao item sj" w
+$item->discountPrice?$item->discountPrice:$item->price;$0
+endsnippet
+
+snippet item-url "taobao item url" w
+$uriManager->detailURI(${1:\$item});$0
+endsnippet
+
+snippet item-yj "taobao item yj" w
+$item->price;$0
+endsnippet
+
+snippet item-xl "taobao item xl" w
+$item->soldCount;$0
+endsnippet
+
+snippet item-bt "taobao item bt" w
+$item->title;$0
+endsnippet
+
+snippet num-format "func number_format" w
+number_format($1, ${2:2})$0
+endsnippet

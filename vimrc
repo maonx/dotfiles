@@ -164,6 +164,8 @@ set showmode                    "Show current mode down the bottom
 set autoread                    "Reload files changed outside vim
 set laststatus=2                "Always show the status line
 set hidden
+set cursorcolumn
+set cursorline
 
 colorscheme molokai "theme
 
@@ -247,12 +249,15 @@ set colorcolumn=79
 " Fast saving
 nmap <leader>w :w!<cr>
 
-if has('gui_running') 
-  set guifont=Hermit:h13
+if has('gui_running')
   set guioptions=""
+endif
+if has('gui_macvim') 
+  set guifont=Hermit:h15
 endif
 
 if has('win64')
+  set guifont=Hermit:h13
   set guifontwide=Microsoft_YaHei_Mono:h12
 endif
 
@@ -269,3 +274,11 @@ map <C-A-k> :resize +5<cr>
 nmap g= gg=G``
 nmap <F2> ggvG$"+y``
 
+" Close the current buffer
+map <leader>bd :bdelete<cr>
+
+" Close all the buffers
+map <leader>ba :bufdo bd<cr>
+
+" Remove the Windows ^M - when the encodings gets messed up
+noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
