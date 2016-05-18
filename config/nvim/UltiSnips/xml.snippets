@@ -102,6 +102,11 @@ snippet sn_item "sn param item" b
 <param description="$1" class="sn_product" num="${2:50}" formType="product" label="$3" name="item" ptype="item" for="$4">${5:选择任意个商品}</param>$0
 endsnippet
 
+
+#---------------------------------#
+#		 wuxian snippets							#
+#---------------------------------#
+
 snippet utrack "wxmb userTrack" b
 <userTrack>
 	<utParams>
@@ -135,7 +140,7 @@ snippet dataDefine "wxmb dataDefine" b
 <dataDefine name="$1" type="$2" description="$3" isNull="${4:true}" propertyName="$5" $6 > $7</dataDefine> $0
 endsnippet
 
-snippet dataRadio "wxmb radio dataDefine" b
+snippet radio-wx "wxmb radio dataDefine" b
 <dataDefine name="$1" type="radio" description="$3" isNull="${4:true}" propertyName="$5" $6 >
 	<config type="sync">
 		$7
@@ -143,7 +148,7 @@ snippet dataRadio "wxmb radio dataDefine" b
 </dataDefine> $0
 endsnippet
 
-snippet data "wxmb dataDefine config data" b
+snippet data-text "wxmb dataDefine config data" b
 <data text="$1" value="$2" ${3:defaultSelect="true"} /> $0
 endsnippet
 
@@ -169,13 +174,22 @@ snippet style "wxmb styleBinding" b
 </styleBinding> $0
 endsnippet
 
+snippet data-bind "wxmb dataBinding" b
+<dataBinding>
+	$1
+</dataBinding> $0
+endsnippet
+
+snippet data-name "wxmb dataBinding data" b
+<data name="$1" value="$2" /> $0
+endsnippet
+
 snippet attr "wxmb styleBinding attribute" b
 <attribute name="$1" value="$2" /> $0
 endsnippet
 
 snippet param "wxmb param" b
-<param name="$1" type="$2" description="$3" propertyName="$4"
-isNull="${5:true}" $6 /> $0
+<param name="$1" type="$2" description="$3" propertyName="$4" isNull="${5:true}" $6 /> $0
 endsnippet
 
 snippet foreach "wxmb foreach" b
@@ -204,20 +218,18 @@ snippet cod "wxmb conditions" b
 endsnippet
 
 snippet imageQuality "wxmb image_quality " b
-<dataDefine name="image_quality" type="select" description=""
-propertyName="图片质量">
+<dataDefine name="image_quality" type="select" description="" isNull="true" propertyName="图片质量">
 	<config type="sync">
-		<data  text="最优" value="-1" />
 		<data  text="一般" value="0" />
 		<data  text="良" value="1" />
-		<data  text="优" value="2" defaultSelect="true" />
+		<data  text="优" value="2" />
+		<data  text="最优" value="-1" defaultSelect="true" />
 	</config>
 </dataDefine> $0
 endsnippet
 
 snippet imageSize "wxmb image_size " b
-<dataDefine name="image_size" type="select" description=""
-propertyName="图片尺寸">
+<dataDefine name="image_size" type="select" description="" isNull="true" propertyName="图片尺寸">
 	<config type="sync">
 		<data  text="640x80" value="80" />
 		<data  text="640x160" value="160" />
@@ -242,7 +254,7 @@ propertyName="图片尺寸">
 endsnippet
 
 snippet autoplay "wxmb autoplay lbmk" b
-<dataDefine name="autoPlay" type="radio" description="" propertyName="轮播方式" >
+<dataDefine name="autoPlay" type="radio" isNull="true" description="" propertyName="轮播方式" >
 	<config type="sync">
 		<data  text="自动播放" value="1" defaultSelect="true" />
 		<data  text="手指滑动" value="0" />
@@ -251,7 +263,7 @@ snippet autoplay "wxmb autoplay lbmk" b
 endsnippet
 
 snippet dotdisplay "wxmb dotDisplay lbmk" b
-<dataDefine name="dotDisplay" type="radio" description="" propertyName="轮播圆点" >
+<dataDefine name="dotDisplay" type="radio" description="" isNull="true" propertyName="轮播圆点" >
 	<config type="sync">
 		<data  text="显示" value="1" defaultSelect="true" />
 		<data  text="隐藏" value="0" />
@@ -260,23 +272,21 @@ snippet dotdisplay "wxmb dotDisplay lbmk" b
 endsnippet
 
 snippet jsonarray "wxmb json array " b
-<dataDefine name="$1" type="jsonArray" min="${2:1}" max="$3" propertyName="$4">
+<dataDefine name="$1" type="jsonArray" min="${2:1}" max="$3" isNull="true" propertyName="$4">
 	$5
 </dataDefine>$0
 endsnippet
 
 snippet imageparam "wxmb image param" b
-<param name="${1:image}" type="image" description="请输入图片url" isNull="true"
-width="${2:640}" height="$3" propertyName="图片" />$0
+<param name="${1:image}" type="image" description="请输入图片url" isNull="true" width="${2:640}" height="$3" propertyName="图片" />$0
 endsnippet
 
 snippet urlparam "wxmb url param" b
-<param name="${1:url}" type="url" description="请输入图片跳转页面url"
-validateType="taokeurl||wirelessurl" isNull="true" propertyName="链接" />$0
+<param name="${1:url}" type="url" description="请输入图片跳转页面url" validateType="taokeurl||wirelessurl" isNull="true" propertyName="链接" />$0
 endsnippet
 
 snippet setting "wxmb setting dataDefine" b
-<dataDefine name="setting" type="radio" description="" propertyName="高级设置" >
+<dataDefine name="setting" type="radio" description="" propertyName="高级设置" isNull="true">
 	<config type="sync">
 		<data  text="收起" value="0" defaultSelect="true" />
 		<data  text="展开" value="1" />
@@ -285,7 +295,7 @@ snippet setting "wxmb setting dataDefine" b
 endsnippet
 
 snippet bottom "wxmb margin bottom" b
-<dataDefine name="marginBottom" type="select" description="" propertyName="模块下间距" refer="setting:1">
+<dataDefine name="marginBottom" type="select" description="" propertyName="模块下间距" isNull="true" refer="setting:1">
 	<config type="sync">
 		<data  text="24" value="24" defaultSelect="true" />
 		<data  text="16" value="16" />
@@ -295,9 +305,8 @@ snippet bottom "wxmb margin bottom" b
 </dataDefine> $0
 endsnippet
 
-snippet dataText "wxmb text dataDefine" b
-<dataDefine name="$1" type="text" description="" propertyName="$2"
-isNull="true" contentSize="$3" ${4:refer="setting:1"} /> $0
+snippet text-wx "wxmb text dataDefine" b
+<dataDefine name="$1" type="text" description="" propertyName="$2" isNull="true" contentSize="$3" ${4:refer="setting:1"} /> $0
 endsnippet
 
 snippet subviews "wxmb subVeiws" b
@@ -310,9 +319,8 @@ snippet wzcolor "wz color text" w
 (输入色值:如#FFFFFF)$0
 endsnippet
 
-snippet dataColor "wxmb text color  dataDefine" b
-<dataDefine name="$1" type="text" description="" isNull="true"
-propertyName="$2(输入色值:如#FFFFFF)" contentSize="7" refer="setting:1" /> $0
+snippet set-color-wx "wxmb text color  dataDefine" b
+<dataDefine name="$1" type="text" description="" isNull="true" propertyName="$2(输入色值:如#FFFFFF)" contentSize="7" refer="setting:1" /> $0
 endsnippet
 
 snippet marginbottom "margin bottom conditions" b
@@ -332,58 +340,40 @@ snippet marginbottom "margin bottom conditions" b
 endsnippet
 
 snippet dataItems "wxmb items dataDefine" b
-<dataDefine name="isAuto" type="radio" isNull="true"
-						propertyName="推荐类型" description="是否是自动推荐列表">
-						<config type="sync">
-							<data text="自动推荐" value="true" defaultSelect="true" />
-							<data text="手动推荐" value="false" defaultSelect="false" />
-						</config>
-					</dataDefine>
-					<dataDefine name="itemIds" type="sellerGoods" isNull="false"
-						propertyName="宝贝" description="宝贝" refer="isAuto:false"
-						validateType="shopItemids" max="6" min="1" />
-					<dataDefine name="pageSize" type="select" isNull="true"
-						propertyName="宝贝个数" description="宝贝个数" refer="isAuto:true">
-						<config type="sync">
-							<data text="1" value="1" defaultSelect="true" />
-							<data text="2" value="2" defaultSelect="false" />
-							<data text="3" value="3" defaultSelect="false" />
-							<data text="4" value="4" defaultSelect="false" />
-							<data text="5" value="5" defaultSelect="false" />
-							<data text="6" value="6" defaultSelect="false" />
-						</config>
-
-					</dataDefine>
-
-					<dataDefine name="filterPrice" type="price" isNull="true"
-						propertyName="过滤价格" description="过滤价格" refer="isAuto:true"
-						validateType="price">
-						<param name="startPrice" type="text" isNull="true"
-							propertyName="起始价格" description="起始价格" refer="isAuto:true"
-							validateType="price" />
-						<param name="endPrice" type="text" isNull="true"
-							propertyName="结束价格" description="结束价格" refer="isAuto:true"
-							validateType="price" />
-					</dataDefine>
-
-					<dataDefine name="keyWord" type="text" max="30"
-						contentSize="30" isNull="true" propertyName="关键字" description="关键字"
-						refer="isAuto:true" />
-					<dataDefine name="sort" type="select" isNull="true"
-						propertyName="排序规则" description="排序规则" refer="isAuto:true">
-						<config type="sync">
-							<data text="上新" value="oldstarts" defaultSelect="true" />
-							<data text="销量" value="hotsell" defaultSelect="false" />
-							<data text="价格（由低到高）" value="bid" defaultSelect="false" />
-						</config>
-					</dataDefine>
-
-					<dataDefine name="catId" type="select" isNull="true"
-						propertyName="类目" description="类目id" refer="isAuto:true">
-						<config type="async">
-							<asyncData url="/decorate/ajax/select/GetShopCategorySelect.do" />
-						</config>
-					</dataDefine>
+<dataDefine name="isAuto" type="radio" isNull="true" propertyName="推荐类型" description="是否是自动推荐列表">
+	<config type="sync">
+		<data text="自动推荐" value="true" defaultSelect="true" />
+		<data text="手动推荐" value="false" defaultSelect="false" />
+	</config>
+</dataDefine>
+<dataDefine name="itemIds" type="sellerGoods" isNull="false" propertyName="宝贝" description="宝贝" refer="isAuto:false" validateType="shopItemids" max="6" min="1" />
+<dataDefine name="pageSize" type="select" isNull="true" propertyName="宝贝个数" description="宝贝个数" refer="isAuto:true">
+	<config type="sync">
+		<data text="1" value="1" defaultSelect="true" />
+		<data text="2" value="2" defaultSelect="false" />
+		<data text="3" value="3" defaultSelect="false" />
+		<data text="4" value="4" defaultSelect="false" />
+		<data text="5" value="5" defaultSelect="false" />
+		<data text="6" value="6" defaultSelect="false" />
+	</config>
+</dataDefine>
+<dataDefine name="filterPrice" type="price" isNull="true" propertyName="过滤价格" description="过滤价格" refer="isAuto:true" validateType="price">
+	<param name="startPrice" type="text" isNull="true" propertyName="起始价格" description="起始价格" refer="isAuto:true" validateType="price" />
+	<param name="endPrice" type="text" isNull="true" propertyName="结束价格" description="结束价格" refer="isAuto:true" validateType="price" />
+</dataDefine>
+<dataDefine name="keyWord" type="text" max="30" contentSize="30" isNull="true" propertyName="关键字" description="关键字" refer="isAuto:true" />
+<dataDefine name="sort" type="select" isNull="true" propertyName="排序规则" description="排序规则" refer="isAuto:true">
+	<config type="sync">
+		<data text="上新" value="oldstarts" defaultSelect="true" />
+		<data text="销量" value="hotsell" defaultSelect="false" />
+		<data text="价格（由低到高）" value="bid" defaultSelect="false" />
+	</config>
+</dataDefine>
+<dataDefine name="catId" type="select" isNull="true" propertyName="类目" description="类目id" refer="isAuto:true">
+	<config type="async">
+		<asyncData url="/decorate/ajax/select/GetShopCategorySelect.do" />
+	</config>
+</dataDefine>
 endsnippet
 
 snippet backgroundColor "backgroundColor conditions" b
@@ -396,9 +386,9 @@ snippet backgroundColor "backgroundColor conditions" b
 </conditions>       
 endsnippet
 
-snippet itemsDate "items dataBinding" b
-<!-- 数据绑定 -->
+snippet itemsData "items dataBinding" b
 <dataBinding>
+<!-- 数据绑定 -->
 	<api needLogin="false" apiAlias="itemList" apiName="mtop.taobao.geb.enhenced.itemList.get">
 		<params>
 			<param name="itemIds" value="\$itemIds" />

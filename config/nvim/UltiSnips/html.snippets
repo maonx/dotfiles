@@ -25,10 +25,8 @@ $20
 endsnippet
 
 snippet slide "slide html" b
-<div class="J_TWidget " data-widget-type="Slide" data-widget-config="
-{'effect': '${1:scrollx}', ${2:'easing': 'easeOutStrong',} ${3:'steps': 1,} 
-${4:'viewSize': [680],}${5:'circular': false,} ${6:'disableBtnCls': 'disable',} }">
-$20
+<div class="J_TWidget " data-widget-type="Slide" data-widget-config=" {'effect': '${1:scrollx}', 'autoplay': '${2:true}' }">
+	$20
 </div>$0
 endsnippet
 
@@ -38,4 +36,33 @@ endsnippet
 
 snippet a. "a link with class" w
 <a class="$1" href="${2:#}" ${3:target="_blank"} >$4</a>$0
+endsnippet
+
+snippet countdown "widget countdown" w
+<div class="J_TWidget djs" data-widget-type="Countdown" data-widget-config="{
+		'endTime': '<?=get('djs'.$i)?>',
+		'interval': 1000,
+		'timeRunCls': '.ks-countdown-run',
+		'timeUnitCls':{
+		'd': '.ks-d',      
+		'h': '.ks-h',      
+		'm': '.ks-m',      
+		's': '.ks-s',      
+		'i': '.ks-i'       
+		},
+		'minDigit': 1,
+		'timeEndCls': '.ks-countdown-end'
+		}">
+				<div class="ks-countdown-run" style="<?php echo $fgxbj.gztys(djsys) ?>">	
+				<span class="wz wz1"><?=$djswz?></span>
+						<span class="wz wzlast">秒</span>
+						<span class="ks-s"></span>
+						<span class="wz">分</span>
+						<span class="ks-m"></span>
+						<span class="wz">时</span>
+						<span class="ks-h"></span>
+						<span class="wz">天</span>
+						<span class="ks-d"></span>
+				</div>
+</div>
 endsnippet

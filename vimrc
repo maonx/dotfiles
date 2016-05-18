@@ -252,6 +252,10 @@ if has('gui_running')
   set guioptions=""
 endif
 
+if has('win64')
+  set guifontwide=Microsoft_YaHei_Mono:h12
+endif
+
 " Smart way to move between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
