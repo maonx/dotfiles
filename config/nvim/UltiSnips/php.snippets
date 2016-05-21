@@ -1,5 +1,5 @@
 snippet get "get MODULE" w
-$_MODULE['$1']$0
+$_MODULE['$1'$2]$0
 endsnippet
 
 snippet items-select "taobao items select" w
@@ -37,4 +37,30 @@ endsnippet
 
 snippet num-format "func number_format" w
 number_format($1, ${2:2})$0
+endsnippet
+
+snippet xbj "taobao module zero xbj" w
+ style="<?php if(is_numeric($_MODULE['xbj'])) echo 'margin-bottom:'.$_MODULE['xbj'].'px;';?>" $0
+endsnippet
+
+snippet mkbjs "taobao module zero bjs" w
+ style="<?=bg($_MODULE['mkbjs'])?>" $0
+endsnippet
+
+snippet func "taobao zero func" b
+<?php
+function bg($value) {
+  if($value) {
+    if(strstr($value,'/')) $bg='background-image:url('.$value.');';
+    else $bg='background-color:'.$value.';';
+  }
+  else $bg="";
+  return $bg;
+}
+function set_color($value,$style="color") {
+  if ($value) {
+    return $style.':'.$value.';';
+  } else return "";
+}
+?> $0
 endsnippet
