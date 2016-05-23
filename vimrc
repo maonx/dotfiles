@@ -253,7 +253,7 @@ if has('gui_running')
   set guioptions=""
 endif
 if has('gui_macvim') 
-  set guifont=Hermit:h15
+  set guifont=Hermit:h16
 endif
 
 if has('win64')
